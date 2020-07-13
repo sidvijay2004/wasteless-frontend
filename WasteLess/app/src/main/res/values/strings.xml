@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">WasteLess</string>
+    <string name="field_empty">Field Cannot be empty</string>
+    <string name="pref_name">com.wasteless</string>
+</resources>
