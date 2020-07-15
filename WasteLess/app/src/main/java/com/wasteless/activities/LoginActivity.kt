@@ -2,6 +2,7 @@ package com.wasteless.activities
 
 import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.util.Log
 import android.view.View
@@ -14,20 +15,31 @@ import com.wasteless.model.Participant
 import com.wasteless.utils.Utilities
 import com.wasteless.viewmodels.ParticipantViewModel
 import kotlinx.android.synthetic.main.activity_login.*
-import kotlinx.android.synthetic.main.activity_login.backButton
+
 
 class LoginActivity : CustomAppActivity() {
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
         backButton.visibility = View.INVISIBLE
         setButtonActions()
+        val preferences: SharedPreferences = this.getSharedPreferences("com.wasteless", 0)
+        val isLoggedIn = preferences.getBoolean("isLoggedIn",false)
+        if (isLoggedIn) {
+            val email = preferences.getString("email", "")
+            val password = preferences.getString("password", "")
+            validateCredentials(email!!, password!!)
+        }
     }
 
     private fun setButtonActions() {
         loginButton.setOnClickListener {
-            validateCredentials()
+
+            val email = login_emailET.text.toString()
+            val password = login_passwordET.text.toString()
+            validateCredentials(email,password)
         }
         signUpTV.setOnClickListener {
             val intent = Intent(applicationContext, SignupActivity::class.java)
@@ -35,9 +47,7 @@ class LoginActivity : CustomAppActivity() {
         }
     }
 
-    private fun validateCredentials() {
-        val email = login_emailET.text.toString()
-        val password = login_passwordET.text.toString()
+    private fun validateCredentials(email: String, password: String) {
         if(Utilities().isInternetAvailable()){
             loginProgress.visibility = View.VISIBLE
             val credentials = LoginCredential(email,password)
@@ -48,15 +58,21 @@ class LoginActivity : CustomAppActivity() {
                 it?.let {
                     loginProgress.visibility = View.GONE
                     if(it.id != null) {
+                        errorTV.visibility = View.INVISIBLE
                         Log.d("Login","success")
                         updateSharedPreferences(it)
                         val intent = Intent(applicationContext, HomeActivity::class.java)
                         startActivity(intent)
                     } else {
+                        errorTV.visibility = View.VISIBLE
+                        errorTV.text = "Email/Password is incorrect"
                         Toast.makeText(this,"Login error", Toast.LENGTH_SHORT).show()
                     }
                 }
             })
+        } else {
+            errorTV.visibility = View.VISIBLE
+            errorTV.text = "No Internet Connection. Try again!"
         }
     }
 
@@ -74,7 +90,7 @@ class LoginActivity : CustomAppActivity() {
         editor.putString("zipcode",participant.zipcode)
         editor.putString("country",participant.country)
         editor.putString("phone",participant.phone)
-        editor.putBoolean("loggedIn",true)
+        editor.putBoolean("isLoggedIn",true)
         editor.commit()
 
     }

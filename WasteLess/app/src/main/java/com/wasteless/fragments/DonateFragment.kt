@@ -11,14 +11,16 @@ import com.wasteless.R
 import kotlinx.android.synthetic.main.fragment_donate.*
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
+import com.wasteless.activities.HomeActivity
 import com.wasteless.model.Donation
 import com.wasteless.utils.StringUtils
 import com.wasteless.viewmodels.DonationViewModel
+import kotlinx.android.synthetic.main.activity_donor_home.*
 import java.text.SimpleDateFormat
 import java.util.*
 
 
-class DonateFragment  : Fragment(){
+class DonateFragment(val homeActivity: HomeActivity)  : Fragment(){
 
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
@@ -78,7 +80,7 @@ class DonateFragment  : Fragment(){
                     it?.let {
                         if(it != null) {
                             Log.e("creation","Created donation")
-
+                            homeActivity.bottom_navigation.selectedItemId = R.id.pickup
                         } else {
                             Log.e("error","Couldn't create donation")
                         }
@@ -135,6 +137,6 @@ class DonateFragment  : Fragment(){
     }
 
     companion object {
-        fun newInstance(): DonateFragment = DonateFragment()
+        //fun newInstance(): DonateFragment = DonateFragment()
     }
 }

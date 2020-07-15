@@ -20,7 +20,7 @@ class HomeActivity: CustomAppActivity() {
                     openFragment(AboutMeFragment.newInstance())
                 }
                 R.id.donate -> {
-                    openFragment(DonateFragment.newInstance())
+                    openDonateFragment(DonateFragment(this))
                 }
                 R.id.pickup -> {
                     openFragment(PickupFragment.newInstance())
@@ -37,4 +37,12 @@ class HomeActivity: CustomAppActivity() {
         transaction.addToBackStack(null)
         transaction.commit()
     }
+
+    private fun openDonateFragment(fragment: DonateFragment) {
+        val transaction = supportFragmentManager.beginTransaction()
+        transaction.replace(R.id.container, fragment)
+        transaction.addToBackStack(null)
+        transaction.commit()
+    }
+    //bottom_navigation
 }

@@ -38,7 +38,7 @@ class PickupFragment: Fragment() {
                     if(it != null) {
                         Log.e("Size of list" , it!!.donations!!.size.toString())
                         pickup_posts_recyclerview.layoutManager = LinearLayoutManager(this.context)
-                        pickup_posts_recyclerview.adapter = PickupPostsAdapter(this.context!!,it!!.donations!!)
+                        pickup_posts_recyclerview.adapter = PickupPostsAdapter(this.context!!,it!!.donations!!.reversed())
                     } else {
                         Log.e("error","Couldn't recieve donations data")
                     }

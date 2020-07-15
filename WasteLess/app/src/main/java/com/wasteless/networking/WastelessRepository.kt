@@ -112,6 +112,8 @@ class WastelessRepository {
         call.enqueue(object: Callback<Participant> {
             override fun onFailure(call: Call<Participant>?, t: Throwable?) {
                 Log.d("LOGIN FAIL",t!!.message)
+                val participant = Participant("","","","","",null,"","","","","")
+                participantData.value = participant
             }
 
             override fun onResponse(call: Call<Participant>?, response: Response<Participant>?) {
