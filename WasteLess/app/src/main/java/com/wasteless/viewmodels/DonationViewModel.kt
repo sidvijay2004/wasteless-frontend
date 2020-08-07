@@ -5,6 +5,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.wasteless.model.Donation
 import com.wasteless.model.DonationList
+import com.wasteless.model.Participant
 import com.wasteless.networking.WastelessRepository
 
 class DonationViewModel : ViewModel() {
@@ -34,5 +35,8 @@ class DonationViewModel : ViewModel() {
 
     fun getDonations(){
         donations = wastelessRepository!!.getDonations()
+    }
+    fun getPickupList(participant: Participant){
+        donations = wastelessRepository!!.getPickupList(participant)
     }
 }

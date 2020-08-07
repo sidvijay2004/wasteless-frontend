@@ -18,7 +18,7 @@ import com.wasteless.viewmodels.DonationViewModel
 import kotlinx.android.synthetic.main.fragment_aboutme.*
 import kotlinx.android.synthetic.main.fragment_pickup.*
 
-class PickupFragment: Fragment() {
+class MyPickupFragment: Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? =
         inflater.inflate(R.layout.fragment_pickup, container, false)
 
@@ -27,7 +27,7 @@ class PickupFragment: Fragment() {
         loadDonations()
     }
     companion object {
-        fun newInstance(): PickupFragment = PickupFragment()
+        fun newInstance(): MyPickupFragment = MyPickupFragment()
     }
     private fun loadDonations(){
         postsProgress.visibility = View.VISIBLE

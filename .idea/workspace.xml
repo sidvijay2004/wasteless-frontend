@@ -1,7 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0ff3ae52-2f38-4f80-b560-6520584c7581" name="Default Changelist" comment="" />
+    <list default="true" id="0ff3ae52-2f38-4f80-b560-6520584c7581" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WasteLess/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/WasteLess/app/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WasteLess/app/release/app-release.apk" beforeDir="false" afterPath="$PROJECT_DIR$/WasteLess/app/release/app-release.apk" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WasteLess/app/release/output.json" beforeDir="false" afterPath="$PROJECT_DIR$/WasteLess/app/release/output.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WasteLess/app/src/main/java/com/wasteless/fragments/PickupFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/WasteLess/app/src/main/java/com/wasteless/fragments/PickupFragment.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WasteLess/app/src/main/java/com/wasteless/networking/RetrofitService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/WasteLess/app/src/main/java/com/wasteless/networking/RetrofitService.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WasteLess/app/src/main/java/com/wasteless/networking/WastelessAPI.kt" beforeDir="false" afterPath="$PROJECT_DIR$/WasteLess/app/src/main/java/com/wasteless/networking/WastelessAPI.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WasteLess/app/src/main/java/com/wasteless/networking/WastelessRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/WasteLess/app/src/main/java/com/wasteless/networking/WastelessRepository.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WasteLess/app/src/main/java/com/wasteless/viewmodels/DonationViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/WasteLess/app/src/main/java/com/wasteless/viewmodels/DonationViewModel.kt" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -10,6 +20,9 @@
   <component name="DefaultGradleProjectSettings">
     <option name="testRunner" value="GRADLE" />
     <option name="delegatedBuild" value="true" />
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="wasteless-frontend" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -24,124 +37,11 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="y" value="23" />
-    <option name="width" value="1440" />
-    <option name="height" value="798" />
-  </component>
   <component name="ProjectId" id="1ehejPQ1JIKEncMZcETcpBSd4CN" />
-  <component name="ProjectView">
-    <navigator currentView="ProjectPane" proportions="" version="1">
-      <foldersAlwaysOnTop value="true" />
-    </navigator>
-    <panes>
-      <pane id="PackagesPane" />
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="wasteless-frontend" type="b2602c69:ProjectViewProjectNode" />
-              <item name="wasteless-frontend" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="wasteless-frontend" type="b2602c69:ProjectViewProjectNode" />
-              <item name="wasteless-frontend" type="462c0819:PsiDirectoryNode" />
-              <item name="WasteLess" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="wasteless-frontend" type="b2602c69:ProjectViewProjectNode" />
-              <item name="wasteless-frontend" type="462c0819:PsiDirectoryNode" />
-              <item name="WasteLess" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="wasteless-frontend" type="b2602c69:ProjectViewProjectNode" />
-              <item name="wasteless-frontend" type="462c0819:PsiDirectoryNode" />
-              <item name="WasteLess" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="wasteless-frontend" type="b2602c69:ProjectViewProjectNode" />
-              <item name="wasteless-frontend" type="462c0819:PsiDirectoryNode" />
-              <item name="WasteLess" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="wasteless-frontend" type="b2602c69:ProjectViewProjectNode" />
-              <item name="wasteless-frontend" type="462c0819:PsiDirectoryNode" />
-              <item name="WasteLess" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="wasteless-frontend" type="b2602c69:ProjectViewProjectNode" />
-              <item name="wasteless-frontend" type="462c0819:PsiDirectoryNode" />
-              <item name="WasteLess" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="wasteless-frontend" type="b2602c69:ProjectViewProjectNode" />
-              <item name="wasteless-frontend" type="462c0819:PsiDirectoryNode" />
-              <item name="WasteLess" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="example" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="wasteless-frontend" type="b2602c69:ProjectViewProjectNode" />
-              <item name="wasteless-frontend" type="462c0819:PsiDirectoryNode" />
-              <item name="WasteLess" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="example" type="462c0819:PsiDirectoryNode" />
-              <item name="wasteless" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="wasteless-frontend" type="b2602c69:ProjectViewProjectNode" />
-              <item name="wasteless-frontend" type="462c0819:PsiDirectoryNode" />
-              <item name="WasteLess" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="example" type="462c0819:PsiDirectoryNode" />
-              <item name="wasteless" type="462c0819:PsiDirectoryNode" />
-              <item name="adapters" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="wasteless-frontend" type="b2602c69:ProjectViewProjectNode" />
-              <item name="wasteless-frontend" type="462c0819:PsiDirectoryNode" />
-              <item name="WasteLess" type="462c0819:PsiDirectoryNode" />
-              <item name="build" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="wasteless-frontend" type="b2602c69:ProjectViewProjectNode" />
-              <item name="wasteless-frontend" type="462c0819:PsiDirectoryNode" />
-              <item name="WasteLess" type="462c0819:PsiDirectoryNode" />
-              <item name="gradle" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="Scope" />
-    </panes>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
@@ -163,5 +63,19 @@
       <updated>1584307568707</updated>
     </task>
     <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="184" y="112" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1595200781789">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="184" y="112" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1440.900@0.0.1440.900" timestamp="1595200781789" />
+    <state x="378" y="282" key="com.intellij.ide.util.TipDialog" timestamp="1595200004056">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="378" y="282" key="com.intellij.ide.util.TipDialog/0.0.1440.900@0.0.1440.900" timestamp="1595200004056" />
+    <state x="387" y="206" width="665" height="488" key="find.popup" timestamp="1595200056384">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="387" y="206" width="665" height="488" key="find.popup/0.0.1440.900@0.0.1440.900" timestamp="1595200056384" />
   </component>
 </project>
