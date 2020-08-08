@@ -39,4 +39,7 @@ class DonationViewModel : ViewModel() {
     fun getPickupList(participant: Participant){
         donations = wastelessRepository!!.getPickupList(participant)
     }
+    fun myPickupList(participant: Participant){
+        donations = wastelessRepository!!.myPickupList(participant)
+    }
 }

@@ -6,6 +6,7 @@ import com.wasteless.R
 import com.wasteless.fragments.AboutMeFragment
 import com.wasteless.fragments.DonateFragment
 import com.wasteless.fragments.PickupFragment
+import com.wasteless.fragments.MyPickupFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import kotlinx.android.synthetic.main.activity_donor_home.*
 
@@ -24,6 +25,9 @@ class HomeActivity: CustomAppActivity() {
                 }
                 R.id.pickup -> {
                     openFragment(PickupFragment.newInstance())
+                }
+                R.id.mypickup -> {
+                    openFragment(MyPickupFragment.newInstance())
                 }
             }
             true

@@ -24,6 +24,9 @@ interface WastelessAPI  {
     @GET("pickupList/{donorId}   ")
     fun pickupList(@Path( "donorId") id: Int):Call<DonationList>
 
+    @GET("myPickupList/{volunteerId}   ")
+    fun myPickupList(@Path( "volunteerId") id: Int):Call<DonationList>
+
     @PUT("donors/{donorId}")
     fun updateParticipant(@Body participant: Participant, @Path( "donorId") id: Int): Call<Participant>
 

@@ -48,7 +48,7 @@ class MyPickupFragment: Fragment() {
             var donationViewModel = ViewModelProviders.of(this).get(DonationViewModel::class.java)
             donationViewModel.init()
 //            donationViewModel.getDonations()
-            donationViewModel.getPickupList(participant)
+            donationViewModel.myPickupList(participant)
             donationViewModel.getDonationsResponse().observe(this, Observer {
                 it?.let {
                     postsProgress.visibility = View.GONE

@@ -124,6 +124,24 @@ class WastelessRepository {
         return donationData
     }
 
+    fun myPickupList(participant: Participant): MutableLiveData<DonationList> {
+        val call: Call<DonationList> = wastelessAPI!!.myPickupList(participant.id!!)
+        val donationData: MutableLiveData<DonationList> = MutableLiveData()
+        call.enqueue(object: Callback<DonationList> {
+            override fun onFailure(call: Call<DonationList>?, t: Throwable?) {
+                Log.d("DONATION FAIL",t!!.message)
+            }
+
+            override fun onResponse(call: Call<DonationList>?, response: Response<DonationList>?) {
+                response?.let {
+                    donationData.value = it.body()
+                    Log.d("DONATION CREATION","SUCCESS")
+                }
+            }
+        })
+        return donationData
+    }
+
 
     fun validateLoginCredentials(credentials: LoginCredential) : MutableLiveData<Participant> {
         val call: Call<Participant> = wastelessAPI!!.validateLoginCredentials(credentials)
@@ -148,7 +166,5 @@ class WastelessRepository {
         })
         return participantData
     }
-
-
 
 }
