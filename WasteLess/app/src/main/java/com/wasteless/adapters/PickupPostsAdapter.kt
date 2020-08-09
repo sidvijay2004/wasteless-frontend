@@ -1,21 +1,28 @@
 package com.wasteless.adapters
 
 import android.content.Context
+import android.content.DialogInterface
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProviders
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.wasteless.R
 import com.wasteless.model.Donation
 import kotlinx.android.synthetic.main.cell_donationpost.view.*
 
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
+import com.wasteless.fragments.PickupFragment
+import com.wasteless.viewmodels.DonationViewModel
+import kotlinx.android.synthetic.main.fragment_pickup.*
 import java.text.SimpleDateFormat
 
-class PickupPostsAdapter(val context: Context,val donations: List<Donation>) : RecyclerView.Adapter<PickupPostsAdapter.CustomViewHolder>() {
+class PickupPostsAdapter(val context: PickupFragment,val donations: List<Donation>) : RecyclerView.Adapter<PickupPostsAdapter.CustomViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CustomViewHolder {
-        val view = LayoutInflater.from(context).inflate(R.layout.cell_donationpost,parent,false)
+        val view = LayoutInflater.from(context.context).inflate(R.layout.cell_donationpost,parent,false)
         Log.e("List size - ",donations.size.toString())
         return CustomViewHolder(view)
     }
@@ -34,14 +41,45 @@ class PickupPostsAdapter(val context: Context,val donations: List<Donation>) : R
                 holder.address.text = address
 
         holder.pickupBtn.setOnClickListener {
-                            MaterialAlertDialogBuilder(context)
-                    .setTitle("Confirm")
-                   .setMessage("Are you sure that you can pick "+position+" up under 30 minutes?")
-                    .setPositiveButton("Yes", null)
-                    .setNegativeButton("No",null)
-                    .show()
+            MaterialAlertDialogBuilder(context.context)
+                .setTitle("Confirm")
+                .setMessage("Are you sure that you can pick "+position+" up under 30 minutes?")
+                .setPositiveButton("Yes", DialogInterface.OnClickListener {
+                        dialog, id -> makeApiCall(position)
+                })
+                .setNegativeButton("No",null)
+                .show()
         }
     }
+//    fun makeApiCall(position: Int){ makeApiCall(position)
+    fun makeApiCall(position: Int){
+        var donationViewModel = ViewModelProviders.of(this.context).get(DonationViewModel::class.java)
+
+        val sharedPreference =  this.context.context!!.getSharedPreferences("com.wasteless", Context.MODE_PRIVATE)
+        val participantId = sharedPreference.getString("id","0")
+
+        donationViewModel.init()
+        donationViewModel.updateTakenDonation(donations.get(position).id!!, participantId!!.toInt())
+        donationViewModel.getDonationCreationResponse().observe(this.context, Observer {
+        it?.let {
+            if(it != null) {
+                Log.e("Update Taken","successfull")
+            } else {
+                Log.e("error","Error updating Taken")
+            }
+        }
+    })
+    }
+
+//        holder.pickupBtn.setOnClickListener {
+//                            MaterialAlertDialogBuilder(context)
+//                    .setTitle("Confirm")
+//                   .setMessage("Are you sure that you can pick "+position+" up under 30 minutes?")
+//                    .setPositiveButton("Yes", null)
+//                    .setNegativeButton("No",null)
+//                    .show()
+//        }
+//    }
 
     // Gets the number of animals in the list
     override fun getItemCount(): Int {

@@ -45,4 +45,7 @@ class DonationViewModel : ViewModel() {
     fun myDonationsList(participant: Participant){
         donations = wastelessRepository!!.myDonationsList(participant)
     }
+    fun updateTakenDonation(donationId: Int , participantId: Int){
+        donationData = wastelessRepository!!.updateTakenDonation(donationId,participantId)
+    }
 }

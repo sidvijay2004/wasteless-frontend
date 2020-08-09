@@ -141,6 +141,25 @@ class WastelessRepository {
         })
         return donationData
     }
+
+    fun updateTakenDonation(donationId: Int, participantId: Int): MutableLiveData<Donation> {
+        val call: Call<Donation> = wastelessAPI!!.updateTakenDonation(donationId!!, participantId!!)
+        val donationData: MutableLiveData<Donation> = MutableLiveData()
+        call.enqueue(object: Callback<Donation> {
+            override fun onFailure(call: Call<Donation>?, t: Throwable?) {
+                Log.d("MY Pickup FAIL",t!!.message)
+            }
+
+            override fun onResponse(call: Call<Donation>?, response: Response<Donation>?) {
+                response?.let {
+                    donationData.value = it.body()
+                    Log.d("MY Pickup CREATION","SUCCESS")
+                }
+            }
+        })
+        return donationData
+    }
+
     fun myDonationsList(participant: Participant): MutableLiveData<DonationList> {
         val call: Call<DonationList> = wastelessAPI!!.myDonationsList(participant.id!!)
         val donationData: MutableLiveData<DonationList> = MutableLiveData()

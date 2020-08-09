@@ -54,8 +54,8 @@ class MyPickupFragment: Fragment() {
                     postsProgress.visibility = View.GONE
                     if(it != null) {
                         Log.e("Size of list" , it!!.donations!!.size.toString())
-                        pickup_posts_recyclerview.layoutManager = LinearLayoutManager(this.context)
-                        pickup_posts_recyclerview.adapter = PickupPostsAdapter(this.context!!,it!!.donations!!.reversed())
+//                        pickup_posts_recyclerview.layoutManager = LinearLayoutManager(this.context)
+//                        pickup_posts_recyclerview.adapter = PickupPostsAdapter(this,it!!.donations!!.reversed())
                     } else {
                         Log.e("error","Couldn't recieve donations data")
                     }
