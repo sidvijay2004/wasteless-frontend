@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
+        android:id="@+id/mydonations"
+        android:icon="@drawable/ic_mypickup_foreground"
+        android:title="MyDonations" />
+    <item
         android:id="@+id/donate"
         android:icon="@drawable/ic_donate"
         android:title="Donate" />
