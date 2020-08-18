@@ -80,7 +80,8 @@ class DonateFragment(val homeActivity: HomeActivity)  : Fragment(){
                     it?.let {
                         if(it != null) {
                             Log.e("creation","Created donation")
-                            homeActivity.bottom_navigation.selectedItemId = R.id.pickup
+                            homeActivity.openFragment(MyDonationsFragment(homeActivity))
+                                //.bottom_navigation.selectedItemId = R.id.pickup
                         } else {
                             Log.e("error","Couldn't create donation")
                         }

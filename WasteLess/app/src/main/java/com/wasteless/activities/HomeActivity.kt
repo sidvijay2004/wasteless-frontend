@@ -17,9 +17,9 @@ class HomeActivity: CustomAppActivity() {
                 R.id.aboutme -> {
                     openFragment(AboutMeFragment.newInstance())
                 }
-                R.id.donate -> {
-                    openDonateFragment(DonateFragment(this))
-                }
+//                R.id.donate -> {
+//                    openDonateFragment(DonateFragment(this))
+//                }
                 R.id.pickup -> {
                     openFragment(PickupFragment.newInstance())
                 }
@@ -27,7 +27,7 @@ class HomeActivity: CustomAppActivity() {
                     openFragment(MyPickupFragment.newInstance())
                 }
                 R.id.mydonations -> {
-                    openFragment(MyDonationsFragment.newInstance())
+                    openFragment(MyDonationsFragment(this))
                 }
             }
             true
@@ -35,14 +35,14 @@ class HomeActivity: CustomAppActivity() {
         bottom_navigation.selectedItemId = R.id.pickup
     }
 
-    private fun openFragment(fragment: Fragment) {
+    fun openFragment(fragment: Fragment) {
         val transaction = supportFragmentManager.beginTransaction()
         transaction.replace(R.id.container, fragment)
         transaction.addToBackStack(null)
         transaction.commit()
     }
 
-    private fun openDonateFragment(fragment: DonateFragment) {
+    fun openDonateFragment(fragment: DonateFragment) {
         val transaction = supportFragmentManager.beginTransaction()
         transaction.replace(R.id.container, fragment)
         transaction.addToBackStack(null)

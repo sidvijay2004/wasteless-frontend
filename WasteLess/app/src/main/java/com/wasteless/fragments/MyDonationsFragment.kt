@@ -11,25 +11,30 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.wasteless.R
+import com.wasteless.activities.HomeActivity
 import com.wasteless.adapters.MyDonationsAdapter
 import com.wasteless.adapters.PickupPostsAdapter
 import com.wasteless.model.Participant
 import com.wasteless.utils.Utilities
 import com.wasteless.viewmodels.DonationViewModel
 import kotlinx.android.synthetic.main.fragment_aboutme.*
+import kotlinx.android.synthetic.main.fragment_mydonations.*
 import kotlinx.android.synthetic.main.fragment_pickup.*
+import kotlinx.android.synthetic.main.fragment_pickup.pickup_posts_recyclerview
+import kotlinx.android.synthetic.main.fragment_pickup.postsProgress
 
-class MyDonationsFragment: Fragment() {
+class MyDonationsFragment(val context: HomeActivity): Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? =
         inflater.inflate(R.layout.fragment_mydonations, container, false)
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         loadDonations()
+        donateButton.setOnClickListener {
+            context.openDonateFragment(DonateFragment(context))
+        }
     }
-    companion object {
-        fun newInstance(): MyDonationsFragment = MyDonationsFragment()
-    }
+
     private fun loadDonations(){
         postsProgress.visibility = View.VISIBLE
         val sharedPreference =  this.activity!!.getSharedPreferences(getString(R.string.pref_name), Context.MODE_PRIVATE)
@@ -56,7 +61,7 @@ class MyDonationsFragment: Fragment() {
                     if(it != null) {
                         Log.e("Size of list" , it!!.donations!!.size.toString())
                         pickup_posts_recyclerview.layoutManager = LinearLayoutManager(this.context)
-                        pickup_posts_recyclerview.adapter = MyDonationsAdapter(this.context!!,it!!.donations!!.reversed())
+                        pickup_posts_recyclerview.adapter = MyDonationsAdapter(this,it!!.donations!!.reversed())
                     } else {
                         Log.e("error","Couldn't recieve donations data")
                     }

@@ -73,6 +73,37 @@
         android:layout_height="50dp"
         android:id="@+id/postcell_pickupBtn"
         android:text="Pickup"></Button>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:visibility="gone"
+        android:id="@+id/postcell_cancel"
+        android:text="Cancel"></Button>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:id="@+id/postcell_mydonation"
+        android:paddingHorizontal="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true">
+
+        <Button
+            android:id="@+id/pickup_cancel"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_marginRight="8dp"
+            android:layout_weight="0.9"
+            android:backgroundTint="@color/colorWhite"
+            android:text="CANCEL"
+            android:textColor="@color/colorPrimary" />
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:text="DONE"
+            android:id="@+id/pickup_done"
+            android:layout_weight="0.9"/>
+    </LinearLayout>
 </LinearLayout>
 </androidx.cardview.widget.CardView>
 

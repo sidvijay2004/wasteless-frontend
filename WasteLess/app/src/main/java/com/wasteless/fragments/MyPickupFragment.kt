@@ -11,6 +11,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.wasteless.R
+import com.wasteless.adapters.MyPickupPostsAdapter
 import com.wasteless.adapters.PickupPostsAdapter
 import com.wasteless.model.Participant
 import com.wasteless.utils.Utilities
@@ -53,9 +54,9 @@ class MyPickupFragment: Fragment() {
                 it?.let {
                     postsProgress.visibility = View.GONE
                     if(it != null) {
-                        Log.e("Size of list" , it!!.donations!!.size.toString())
-//                        pickup_posts_recyclerview.layoutManager = LinearLayoutManager(this.context)
-//                        pickup_posts_recyclerview.adapter = PickupPostsAdapter(this,it!!.donations!!.reversed())
+//                        Log.e("Size of list" , it!!.donations!!.size.toString())
+                        pickup_posts_recyclerview.layoutManager = LinearLayoutManager(this.context)
+                        pickup_posts_recyclerview.adapter = MyPickupPostsAdapter(this,it!!.donations!!.reversed())
                     } else {
                         Log.e("error","Couldn't recieve donations data")
                     }

@@ -5,10 +5,6 @@
         android:icon="@drawable/ic_mydonate_foreground"
         android:title="MyDonations" />
     <item
-        android:id="@+id/donate"
-        android:icon="@drawable/ic_donate"
-        android:title="Donate" />
-    <item
         android:id="@+id/pickup"
         android:icon="@drawable/ic_pickup_foreground"
         android:title="Pickup" />
