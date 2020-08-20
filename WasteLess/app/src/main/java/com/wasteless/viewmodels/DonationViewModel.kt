@@ -48,4 +48,7 @@ class DonationViewModel : ViewModel() {
     fun updateTakenDonation(donationId: Int , participantId: Int){
         donationData = wastelessRepository!!.updateTakenDonation(donationId,participantId)
     }
+    fun cancelTakenDonation(donationId: Int , participantId: Int){
+        donationData = wastelessRepository!!.cancelTakenDonation(donationId,participantId)
+    }
 }
