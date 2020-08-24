@@ -43,6 +43,9 @@ interface WastelessAPI  {
     @PUT("cancelTakenDonation/{donationId}")
     fun cancelTakenDonation( @Path( "donationId") id: Int, @Query("volunteerId") volunteerId: Int): Call<Donation>
 
+    @PUT("completedDonation/{donationId}")
+    fun completedDonation( @Path( "donationId") id: Int, @Query("volunteerId") volunteerId: Int): Call<Donation>
+
     @POST("/donors/login")
     fun validateLoginCredentials(@Body credentials: LoginCredential) : Call<Participant>
 

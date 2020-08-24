@@ -68,17 +68,18 @@ class MyDonationsAdapter(val context: MyDonationsFragment, val donations: List<D
         val participantId = sharedPreference.getString("id","0")
 
         donationViewModel.init()
-        donationViewModel.updateTakenDonation(donations.get(position).id!!, participantId!!.toInt())
+        donationViewModel.cancelTakenDonation(donations.get(position).id!!, participantId!!.toInt())
         donationViewModel.getDonationCreationResponse().observe(this.context, Observer {
             it?.let {
                 if(it != null) {
-                    Log.e("Update Taken","successfull")
+                    Log.e("Cancel Taken Donation","successfull")
                 } else {
                     Log.e("error","Error updating Taken")
                 }
             }
         })
     }
+
 
     fun completeDonation(position: Int){
         var donationViewModel = ViewModelProviders.of(this.context).get(DonationViewModel::class.java)
@@ -87,7 +88,7 @@ class MyDonationsAdapter(val context: MyDonationsFragment, val donations: List<D
         val participantId = sharedPreference.getString("id","0")
 
         donationViewModel.init()
-        donationViewModel.updateTakenDonation(donations.get(position).id!!, participantId!!.toInt())
+        donationViewModel.completedDonation(donations.get(position).id!!, participantId!!.toInt())
         donationViewModel.getDonationCreationResponse().observe(this.context, Observer {
             it?.let {
                 if(it != null) {
@@ -98,6 +99,7 @@ class MyDonationsAdapter(val context: MyDonationsFragment, val donations: List<D
             }
         })
     }
+
 
     // Gets the number of animals in the list
     override fun getItemCount(): Int {
