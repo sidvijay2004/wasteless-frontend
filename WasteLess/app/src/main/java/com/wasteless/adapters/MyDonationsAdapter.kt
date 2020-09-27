@@ -2,6 +2,7 @@ package com.wasteless.adapters
 
 import android.content.Context
 import android.content.DialogInterface
+import android.graphics.Color
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -39,6 +40,15 @@ class MyDonationsAdapter(val context: MyDonationsFragment, val donations: List<D
         holder.address.text = address
         holder.mydonationlayout.visibility = View.VISIBLE
         holder.pickupBtn.visibility = View.GONE
+        holder.pickupStatus.visibility = View.VISIBLE
+        if(donation.volunteerId != null){
+            holder.pickupStatus.setTextColor(Color.parseColor("#BB0000"))
+            holder.pickupStatus.text = "Status : Picked up by "+donation.volunteerId
+        } else {
+            holder.pickupStatus.setTextColor(Color.parseColor("#76BA1B"))
+            holder.pickupStatus.text = "Status : Available"
+        }
+        holder.deleteButtonLayout.visibility = View.VISIBLE
         holder.cancelBtn.setOnClickListener {
             MaterialAlertDialogBuilder(context.context)
                 .setTitle("Confirm")
@@ -59,8 +69,22 @@ class MyDonationsAdapter(val context: MyDonationsFragment, val donations: List<D
                 .setNegativeButton("No",null)
                 .show()
         }
+        holder.deleteButtonLayout.setOnClickListener {
+            MaterialAlertDialogBuilder(context.context)
+                .setTitle("Delete")
+                .setMessage("Do you want to delete this donation?")
+                .setPositiveButton("Yes", DialogInterface.OnClickListener {
+                        dialog, id -> deleteDonation(position)
+                })
+                .setNegativeButton("No",null)
+                .show()
+        }
     }
 
+    fun deleteDonation(position: Int) {
+        // Call context.loadDonations() after you hit API.
+        //
+    }
     fun cancelDonation(position: Int){
         var donationViewModel = ViewModelProviders.of(this.context).get(DonationViewModel::class.java)
 
@@ -72,6 +96,7 @@ class MyDonationsAdapter(val context: MyDonationsFragment, val donations: List<D
         donationViewModel.getDonationCreationResponse().observe(this.context, Observer {
             it?.let {
                 if(it != null) {
+                    context.loadDonations()
                     Log.e("Update Taken","successfull")
                 } else {
                     Log.e("error","Error updating Taken")
@@ -91,6 +116,7 @@ class MyDonationsAdapter(val context: MyDonationsFragment, val donations: List<D
         donationViewModel.getDonationCreationResponse().observe(this.context, Observer {
             it?.let {
                 if(it != null) {
+                    context.loadDonations()
                     Log.e("Update Taken","successfull")
                 } else {
                     Log.e("error","Error updating Taken")
@@ -113,5 +139,8 @@ class MyDonationsAdapter(val context: MyDonationsFragment, val donations: List<D
         val mydonationlayout = view.postcell_mydonation
         val cancelBtn = view.pickup_cancel
         val doneBtn = view.pickup_done
+        val deleteButtonLayout = view.deleteButtonLayout
+        val deleteButton = view.delete_button
+        val pickupStatus = view.pickup_status
     }
 }

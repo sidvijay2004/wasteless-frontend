@@ -67,6 +67,7 @@ class MyPickupPostsAdapter(val context: MyPickupFragment, val donations: List<Do
             it?.let {
                 if(it != null) {
                     Log.e("Update Taken","successfull")
+                    context.loadDonations()
                 } else {
                     Log.e("error","Error updating Taken")
                 }
@@ -91,5 +92,6 @@ class MyPickupPostsAdapter(val context: MyPickupFragment, val donations: List<Do
         val cancelBtn = view.pickup_cancel
         val doneBtn = view.pickup_done
         val cancelLayout = view.postcell_cancel
+        val pickupStatus = view.pickup_status
     }
 }

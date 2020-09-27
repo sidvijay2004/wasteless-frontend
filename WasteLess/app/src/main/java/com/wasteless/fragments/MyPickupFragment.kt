@@ -30,7 +30,7 @@ class MyPickupFragment: Fragment() {
     companion object {
         fun newInstance(): MyPickupFragment = MyPickupFragment()
     }
-    private fun loadDonations(){
+    public fun loadDonations(){
         postsProgress.visibility = View.VISIBLE
         val sharedPreference =  this.activity!!.getSharedPreferences(getString(R.string.pref_name), Context.MODE_PRIVATE)
         val name = sharedPreference.getString("name","0")

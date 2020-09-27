@@ -35,7 +35,7 @@ class MyDonationsFragment(val context: HomeActivity): Fragment() {
         }
     }
 
-    private fun loadDonations(){
+    fun loadDonations(){
         postsProgress.visibility = View.VISIBLE
         val sharedPreference =  this.activity!!.getSharedPreferences(getString(R.string.pref_name), Context.MODE_PRIVATE)
         val name = sharedPreference.getString("name","0")

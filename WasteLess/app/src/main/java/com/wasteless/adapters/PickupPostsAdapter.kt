@@ -65,6 +65,7 @@ class PickupPostsAdapter(val context: PickupFragment,val donations: List<Donatio
         donationViewModel.getDonationCreationResponse().observe(this.context, Observer {
         it?.let {
             if(it != null) {
+                context.loadDonations()
                 Log.e("Update Taken","successfull")
             } else {
                 Log.e("error","Error updating Taken")
