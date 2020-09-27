@@ -1,16 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AndroidLogFilters">
+    <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="0ff3ae52-2f38-4f80-b560-6520584c7581" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/wasteless-frontend.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/wasteless-frontend.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WasteLess/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/WasteLess/app/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WasteLess/app/release/app-release.apk" beforeDir="false" afterPath="$PROJECT_DIR$/WasteLess/app/release/app-release.apk" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WasteLess/app/release/output.json" beforeDir="false" afterPath="$PROJECT_DIR$/WasteLess/app/release/output.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WasteLess/app/src/main/java/com/wasteless/fragments/PickupFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/WasteLess/app/src/main/java/com/wasteless/fragments/PickupFragment.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WasteLess/app/src/main/java/com/wasteless/networking/RetrofitService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/WasteLess/app/src/main/java/com/wasteless/networking/RetrofitService.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WasteLess/app/src/main/java/com/wasteless/networking/WastelessAPI.kt" beforeDir="false" afterPath="$PROJECT_DIR$/WasteLess/app/src/main/java/com/wasteless/networking/WastelessAPI.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WasteLess/app/src/main/java/com/wasteless/networking/WastelessRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/WasteLess/app/src/main/java/com/wasteless/networking/WastelessRepository.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WasteLess/app/src/main/java/com/wasteless/viewmodels/DonationViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/WasteLess/app/src/main/java/com/wasteless/viewmodels/DonationViewModel.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,6 +18,7 @@
     <option name="testRunner" value="GRADLE" />
     <option name="delegatedBuild" value="true" />
   </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="ZY224X8QHJ" />
   <component name="FavoritesManager">
     <favorites_list name="wasteless-frontend" />
   </component>
@@ -51,6 +49,30 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="AndroidSdkUpdater" />
   </component>
+  <component name="RunManager">
+    <configuration name="/Users/sidvijay/projects/wasteless-frontend/WasteLess/app/build.gradle" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/WasteLess/app/build.gradle" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list />
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Gradle./Users/sidvijay/projects/wasteless-frontend/WasteLess/app/build.gradle" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -65,14 +87,30 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state x="184" y="112" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1595200781789">
+    <state x="184" y="112" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1599425160336">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="184" y="112" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1440.900@0.0.1440.900" timestamp="1595200781789" />
-    <state x="378" y="282" key="com.intellij.ide.util.TipDialog" timestamp="1595200004056">
+    <state x="184" y="112" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1440.900@0.0.1440.900" timestamp="1599425160336" />
+    <state width="1398" height="245" key="GridCell.Tab.0.bottom" timestamp="1599425170970">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="378" y="282" key="com.intellij.ide.util.TipDialog/0.0.1440.900@0.0.1440.900" timestamp="1595200004056" />
+    <state width="1398" height="245" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1599425170970" />
+    <state width="1398" height="245" key="GridCell.Tab.0.center" timestamp="1599425170967">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1398" height="245" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1599425170967" />
+    <state width="1398" height="245" key="GridCell.Tab.0.left" timestamp="1599425170967">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1398" height="245" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1599425170967" />
+    <state width="1398" height="245" key="GridCell.Tab.0.right" timestamp="1599425170968">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1398" height="245" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1599425170968" />
+    <state x="378" y="282" key="com.intellij.ide.util.TipDialog" timestamp="1599425307240">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="378" y="282" key="com.intellij.ide.util.TipDialog/0.0.1440.900@0.0.1440.900" timestamp="1599425307240" />
     <state x="387" y="206" width="665" height="488" key="find.popup" timestamp="1595200056384">
       <screen x="0" y="0" width="1440" height="900" />
     </state>

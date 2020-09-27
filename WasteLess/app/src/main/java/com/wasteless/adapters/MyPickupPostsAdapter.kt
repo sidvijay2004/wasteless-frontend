@@ -62,12 +62,13 @@ class MyPickupPostsAdapter(val context: MyPickupFragment, val donations: List<Do
         val participantId = sharedPreference.getString("id","0")
 
         donationViewModel.init()
-        donationViewModel.updateTakenDonation(donations.get(position).id!!, participantId!!.toInt())
+        donationViewModel.cancelTakenDonation(donations.get(position).id!!, participantId!!.toInt())
         donationViewModel.getDonationCreationResponse().observe(this.context, Observer {
             it?.let {
                 if(it != null) {
                     Log.e("Update Taken","successfull")
                     context.loadDonations()
+                    Log.e("Cancel Taken","successfull")
                 } else {
                     Log.e("error","Error updating Taken")
                 }
