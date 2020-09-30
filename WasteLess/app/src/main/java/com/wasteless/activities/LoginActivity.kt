@@ -35,6 +35,10 @@ class LoginActivity : CustomAppActivity() {
     }
 
     private fun setButtonActions() {
+        forgotPasswordTV.setOnClickListener {
+            val intent = Intent(applicationContext, ForgotPasswordActivity::class.java)
+            startActivity(intent)
+        }
         loginButton.setOnClickListener {
 
             val email = login_emailET.text.toString()

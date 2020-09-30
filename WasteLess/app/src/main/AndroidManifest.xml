@@ -21,7 +21,10 @@
             </intent-filter>
         </activity>
     <activity android:name="com.wasteless.activities.SignupActivity"></activity>
+        <activity android:name="com.wasteless.activities.ForgotPasswordActivity"></activity>
         <activity android:name="com.wasteless.activities.HomeActivity"></activity>
+
     </application>
+
 
 </manifest>
