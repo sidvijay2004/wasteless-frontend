@@ -19,7 +19,7 @@ class ForgotPasswordActivity: CustomAppActivity() {
 
 
             var email = passwordET.text
-            passwordConfirmationTV.text = "Password has beens sent to "+email
+            passwordConfirmationTV.text = "Password has been sent to "+email
             passwordConfirmationTV.visibility = View.VISIBLE
             passwordET.visibility = View.GONE
             passwordBtn.visibility = View.GONE

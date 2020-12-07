@@ -3,11 +3,16 @@
   <component name="AndroidLogFilters">
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="NONE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="0ff3ae52-2f38-4f80-b560-6520584c7581" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/wasteless-frontend.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/wasteless-frontend.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WasteLess/app/src/main/java/com/wasteless/networking/RetrofitService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/WasteLess/app/src/main/java/com/wasteless/networking/RetrofitService.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WasteLess/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/WasteLess/app/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WasteLess/app/release/app-release.apk" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WasteLess/app/release/output.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WasteLess/app/src/main/java/com/wasteless/activities/ForgotPasswordActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/WasteLess/app/src/main/java/com/wasteless/activities/ForgotPasswordActivity.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,7 +23,7 @@
     <option name="testRunner" value="GRADLE" />
     <option name="delegatedBuild" value="true" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="ZY224X8QHJ" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[]" />
   <component name="FavoritesManager">
     <favorites_list name="wasteless-frontend" />
   </component>
@@ -38,10 +43,11 @@
   <component name="ProjectId" id="1ehejPQ1JIKEncMZcETcpBSd4CN" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ApkExportedModule" value="wasteless-frontend" />
+    <property name="BundleExportedModule" value="wasteless-frontend" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="android.project.structure.last.selected" value="SDK Location" />
     <property name="android.project.structure.proportion" value="0.15" />
