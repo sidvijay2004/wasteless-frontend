@@ -258,4 +258,9 @@ class WastelessRepository {
         return donationData
     }
 
+
+    fun forgotPassword(email: String){
+        wastelessAPI!!.forgotPassword(email!!)
+
+    }
 }

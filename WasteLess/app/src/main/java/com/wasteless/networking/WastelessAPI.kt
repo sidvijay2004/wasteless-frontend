@@ -52,4 +52,7 @@ interface WastelessAPI  {
     @POST("/donors/login")
     fun validateLoginCredentials(@Body credentials: LoginCredential) : Call<Participant>
 
+    @GET("forgotPassword")
+    fun forgotPassword(@Query("volunteerId") email: String)
+
 }

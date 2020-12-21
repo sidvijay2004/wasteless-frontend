@@ -39,4 +39,8 @@ class ParticipantViewModel: ViewModel() {
     fun validateCredentials(credentials: LoginCredential){
         participantData = wastelessRepository!!.validateLoginCredentials(credentials)
     }
+
+    fun forgotPassword(email: String){
+        wastelessRepository!!.forgotPassword(email)
+    }
     }
