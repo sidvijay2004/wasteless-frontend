@@ -45,7 +45,8 @@ class PickupPostsAdapter(val context: PickupFragment,val donations: List<Donatio
         holder.pickupBtn.setOnClickListener {
             MaterialAlertDialogBuilder(context.context)
                 .setTitle("Confirm")
-                .setMessage("Are you sure that you can pick "+position+" up under 30 minutes?")
+//                .setMessage("Are you sure that you can pick "+position+" up under 30 minutes?")
+                .setMessage("Are you sure you want to pick this item up?")
                 .setPositiveButton("Yes", DialogInterface.OnClickListener {
                         dialog, id -> makeApiCall(position)
                 })

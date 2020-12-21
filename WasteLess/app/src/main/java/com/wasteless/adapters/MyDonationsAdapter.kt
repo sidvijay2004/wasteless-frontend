@@ -81,10 +81,7 @@ class MyDonationsAdapter(val context: MyDonationsFragment, val donations: List<D
         }
     }
 
-    fun deleteDonation(position: Int) {
-        // Call context.loadDonations() after you hit API.
-        //
-    }
+
     fun cancelDonation(position: Int){
         var donationViewModel = ViewModelProviders.of(this.context).get(DonationViewModel::class.java)
 
@@ -127,6 +124,25 @@ class MyDonationsAdapter(val context: MyDonationsFragment, val donations: List<D
         })
     }
 
+    fun deleteDonation(position: Int){
+        var donationViewModel = ViewModelProviders.of(this.context).get(DonationViewModel::class.java)
+
+        val sharedPreference =  this.context.context!!.getSharedPreferences("com.wasteless", Context.MODE_PRIVATE)
+        val participantId = sharedPreference.getString("id","0")
+
+        donationViewModel.init()
+        donationViewModel.deleteDonation(donations.get(position).id!!, participantId!!.toInt())
+        donationViewModel.getDonationCreationResponse().observe(this.context, Observer {
+            it?.let {
+                if(it != null) {
+                    context.loadDonations()
+                    Log.e("Delete  Donation","successfull")
+                } else {
+                    Log.e("error","Error Deleting Donation")
+                }
+            }
+        })
+    }
 
     // Gets the number of animals in the list
     override fun getItemCount(): Int {

@@ -25,6 +25,7 @@ class DonationViewModel : ViewModel() {
         donationData = wastelessRepository!!.createDonation(donation)
     }
 
+
     fun getDonationCreationResponse(): LiveData<Donation> {
         return donationData as LiveData<Donation>
     }
@@ -54,4 +55,9 @@ class DonationViewModel : ViewModel() {
     fun completedDonation(donationId: Int , participantId: Int){
         donationData = wastelessRepository!!.completedDonation(donationId,participantId)
     }
+
+    fun deleteDonation(donationId: Int , participantId: Int){
+        donationData = wastelessRepository!!.deleteDonation(donationId,participantId)
+    }
+
 }
