@@ -46,6 +46,30 @@ class WastelessRepository {
         return participantData
     }
 
+    fun getParticipant(participantId: Int): MutableLiveData<Participant> {
+        val call: Call<Participant> = wastelessAPI!!.getParticipant(participantId)
+        val participantData: MutableLiveData<Participant> = MutableLiveData()
+        call.enqueue(object: Callback<Participant> {
+            override fun onFailure(call: Call<Participant>?, t: Throwable?) {
+                Log.d("GET PARTICIPANT FAIL",t!!.message)
+                val participant = Participant("","","","","",null,"","","","","")
+                participantData.value = participant
+            }
+
+            override fun onResponse(call: Call<Participant>?, response: Response<Participant>?) {
+                response?.let {
+                    participantData.value = it.body()
+                    Log.d("LOGIN","SUCCESS")
+                    if(it.body() == null){
+                        Log.d("Data","NULL")
+                    }
+                    Log.d("CODE - ",response.code().toString())
+                }
+            }
+        })
+        return participantData
+    }
+
 
     fun updateParticipant(participant: Participant): MutableLiveData<Participant> {
         val call: Call<Participant> = wastelessAPI!!.updateParticipant(participant,participant.id!!)

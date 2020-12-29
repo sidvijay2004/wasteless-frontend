@@ -41,7 +41,7 @@ class MyDonationsAdapter(val context: MyDonationsFragment, val donations: List<D
         holder.mydonationlayout.visibility = View.VISIBLE
         holder.pickupBtn.visibility = View.GONE
         holder.pickupStatus.visibility = View.VISIBLE
-        if(donation.volunteerId != null){
+        if(donation.volunteerId != null && !donation.volunteerId.equals("-1")){
             holder.pickupStatus.setTextColor(Color.parseColor("#BB0000"))
             holder.pickupStatus.text = "Status : Picked up by "+donation.volunteerId
         } else {

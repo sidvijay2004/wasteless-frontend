@@ -40,6 +40,10 @@ class ParticipantViewModel: ViewModel() {
         participantData = wastelessRepository!!.validateLoginCredentials(credentials)
     }
 
+    fun getParticipant(participantId: Int): MutableLiveData<Participant> {
+        return wastelessRepository!!.getParticipant(participantId)
+    }
+
     fun forgotPassword(email: String){
         wastelessRepository!!.forgotPassword(email)
     }
