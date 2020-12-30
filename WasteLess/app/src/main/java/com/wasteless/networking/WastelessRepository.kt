@@ -2,10 +2,7 @@ package com.wasteless.networking
 
 import android.util.Log
 import androidx.lifecycle.MutableLiveData
-import com.wasteless.model.Donation
-import com.wasteless.model.DonationList
-import com.wasteless.model.LoginCredential
-import com.wasteless.model.Participant
+import com.wasteless.model.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -283,8 +280,27 @@ class WastelessRepository {
     }
 
 
-    fun forgotPassword(email: String){
-        wastelessAPI!!.forgotPassword(email!!)
+    fun forgotPassword(email: String): MutableLiveData<ResponseStatus> {
+        val call: Call<ResponseStatus>   = wastelessAPI!!.forgotPassword(email)
+        val responseStatus: MutableLiveData<ResponseStatus> = MutableLiveData()
+        val respStatus =  ResponseStatus("","")
+        call.enqueue(object: Callback<ResponseStatus> {
+            override fun onFailure(call: Call<ResponseStatus>?, t: Throwable?) {
+                Log.d("LOGIN FAIL",t!!.message)
+                responseStatus.value = respStatus
+            }
 
+            override fun onResponse(call: Call<ResponseStatus>?, response: Response<ResponseStatus>?) {
+                response?.let {
+                    responseStatus.value = it.body()
+                    Log.d("LOGIN","SUCCESS")
+                    if(it.body() == null){
+                        Log.d("Data","NULL")
+                    }
+                    Log.d("CODE - ",response.code().toString())
+                }
+            }
+        })
+        return responseStatus
     }
 }

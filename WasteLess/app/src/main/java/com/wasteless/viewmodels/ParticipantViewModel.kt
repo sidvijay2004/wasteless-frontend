@@ -5,6 +5,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.wasteless.model.LoginCredential
 import com.wasteless.model.Participant
+import com.wasteless.model.ResponseStatus
 import com.wasteless.networking.WastelessRepository
 
 class ParticipantViewModel: ViewModel() {
@@ -12,6 +13,7 @@ class ParticipantViewModel: ViewModel() {
     var participantData : MutableLiveData<Participant>? = null
     var updatedParticipantData : MutableLiveData<Participant>? = null
     var wastelessRepository: WastelessRepository? = null
+    var updatedResponseStatusData : MutableLiveData<ResponseStatus>? = null
 
     fun init() {
         if(participantData != null) {
@@ -32,6 +34,9 @@ class ParticipantViewModel: ViewModel() {
         return updatedParticipantData as LiveData<Participant>
     }
 
+
+
+
     fun getParticipantData():LiveData<Participant>{
         return participantData as LiveData<Participant>
     }
@@ -43,8 +48,10 @@ class ParticipantViewModel: ViewModel() {
     fun getParticipant(participantId: Int): MutableLiveData<Participant> {
         return wastelessRepository!!.getParticipant(participantId)
     }
-
+    fun getUpdatedResponseStatusData():LiveData<ResponseStatus>{
+        return updatedResponseStatusData as LiveData<ResponseStatus>
+    }
     fun forgotPassword(email: String){
-        wastelessRepository!!.forgotPassword(email)
+        updatedResponseStatusData = wastelessRepository!!.forgotPassword(email)
     }
     }

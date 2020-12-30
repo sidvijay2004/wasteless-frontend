@@ -1,9 +1,6 @@
 package com.wasteless.networking
 
-import com.wasteless.model.Donation
-import com.wasteless.model.DonationList
-import com.wasteless.model.LoginCredential
-import com.wasteless.model.Participant
+import com.wasteless.model.*
 import retrofit2.Call
 import retrofit2.http.*
 import retrofit2.http.PUT
@@ -57,6 +54,6 @@ interface WastelessAPI  {
     fun validateLoginCredentials(@Body credentials: LoginCredential) : Call<Participant>
 
     @GET("forgotPassword")
-    fun forgotPassword(@Query("volunteerId") email: String)
+    fun forgotPassword(@Query("email") email: String): Call<ResponseStatus>
 
 }
