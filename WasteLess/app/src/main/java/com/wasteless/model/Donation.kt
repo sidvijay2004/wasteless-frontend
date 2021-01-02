@@ -13,6 +13,7 @@ data class Donation(
     val donorState: String,
     val id: Int?,
     val volunteerId: String,
+    val volunteerName: String,
     val status: String,
     val donorZipcode : String
 )

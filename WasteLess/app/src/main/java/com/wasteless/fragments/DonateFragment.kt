@@ -72,7 +72,7 @@ class DonateFragment(val homeActivity: HomeActivity)  : Fragment(){
                 val sdf = SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSZ")
                 val currentDate = sdf.format(Date())
                 val donation = Donation(description, currentDate,donorName!!,address1,address2,city,
-                    "USA",donorId!!,phone,state,null,"-1","Available",zipcode)
+                    "USA",donorId!!,phone,state,null,"-1","null","Available",zipcode)
                 var donationViewModel = ViewModelProviders.of(this).get(DonationViewModel::class.java)
                 donationViewModel.init()
                 donationViewModel.createDonation(donation)
