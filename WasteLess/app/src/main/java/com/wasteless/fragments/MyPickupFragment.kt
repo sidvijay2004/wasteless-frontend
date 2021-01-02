@@ -17,7 +17,11 @@ import com.wasteless.model.Participant
 import com.wasteless.utils.Utilities
 import com.wasteless.viewmodels.DonationViewModel
 import kotlinx.android.synthetic.main.fragment_aboutme.*
+import kotlinx.android.synthetic.main.fragment_mydonations.*
+import kotlinx.android.synthetic.main.fragment_mypickup.*
 import kotlinx.android.synthetic.main.fragment_pickup.*
+import kotlinx.android.synthetic.main.fragment_pickup.pickup_posts_recyclerview
+import kotlinx.android.synthetic.main.fragment_pickup.postsProgress
 
 class MyPickupFragment: Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? =
@@ -55,10 +59,16 @@ class MyPickupFragment: Fragment() {
                     postsProgress.visibility = View.GONE
                     if(it != null) {
 //                        Log.e("Size of list" , it!!.donations!!.size.toString())
+                        if(it!!.donations!!.isEmpty()){
+                            noDataLayout_mypickup.visibility = View.INVISIBLE
+                        } else {
+                            noDataLayout_mypickup.visibility = View.VISIBLE
+                        }
                         pickup_posts_recyclerview.layoutManager = LinearLayoutManager(this.context)
                         pickup_posts_recyclerview.adapter = MyPickupPostsAdapter(this,it!!.donations!!.reversed())
                     } else {
                         Log.e("error","Couldn't recieve donations data")
+                        noDataLayout_mypickup.visibility = View.VISIBLE
                     }
                 }
             })
