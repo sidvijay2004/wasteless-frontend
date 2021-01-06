@@ -4,8 +4,8 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 class RetrofitService {
-//        private val url = "http://13.59.14.86:8080/" //CLOUD
-    private val url = "http://localhost:8081/"
+        private val url = "http://13.59.14.86:8080/" //CLOUD
+//    private val url = "http://localhost:8081/"
 //    private val url = "http://192.168.68.107:8081/"
     // Change url for cloud
     //private val url = "http://10.0.2.2:8081/" //LOCAL
