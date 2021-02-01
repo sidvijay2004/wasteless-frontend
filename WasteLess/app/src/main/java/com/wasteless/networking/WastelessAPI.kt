@@ -15,8 +15,6 @@ import retrofit2.Call
 import retrofit2.http.*
 import retrofit2.http.PUT
 
-
-
 interface WastelessAPI  {
 
     @POST("donors")

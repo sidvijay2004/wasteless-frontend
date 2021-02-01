@@ -68,9 +68,9 @@ class PickupFragment: Fragment() {
                     if(it != null) {
                         Log.e("Size of list" , it!!.donations!!.size.toString())
                         if(it!!.donations!!.isEmpty()){
-                            noDataLayout_pickup.visibility = View.INVISIBLE
-                        } else {
                             noDataLayout_pickup.visibility = View.VISIBLE
+                        } else {
+                            noDataLayout_pickup.visibility = View.INVISIBLE
                         }
                         pickup_posts_recyclerview.layoutManager = LinearLayoutManager(this.context)
                         pickup_posts_recyclerview.adapter = PickupPostsAdapter(this,it!!.donations!!.reversed())

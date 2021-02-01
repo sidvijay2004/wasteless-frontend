@@ -72,15 +72,15 @@ class MyDonationsFragment(val context: HomeActivity): Fragment() {
                     if(it != null) {
                         Log.e("Size of list" , it!!.donations!!.size.toString())
                         if(it!!.donations!!.isEmpty()){
-                            noDataLayout_mydonations.visibility = View.INVISIBLE
-                        } else {
                             noDataLayout_mydonations.visibility = View.VISIBLE
+                        } else {
+                            noDataLayout_mydonations.visibility = View.INVISIBLE
                         }
                         pickup_posts_recyclerview.layoutManager = LinearLayoutManager(this.context)
                         pickup_posts_recyclerview.adapter = MyDonationsAdapter(this,it!!.donations!!.reversed())
                     } else {
                         Log.e("error","Couldn't recieve donations data")
-                        noDataLayout_mypickup.visibility = View.VISIBLE
+                        noDataLayout_mydonations.visibility = View.VISIBLE
                     }
                 }
             })
